@@ -1,0 +1,55 @@
+#VRML V2.0 utf8
+
+PerspectiveCamera {
+	aspectRatio	1.33333
+	viewportMapping	CROP_VIEWPORT_NO_FRAME
+}
+
+NavigationInfo {
+	foreceRenderGUI	TRUE
+}
+
+DEF	font18 Font	{
+	size 18
+	name "Î¢ÈíÑÅºÚ"
+}
+GUIGroup {
+	imagesets ["../UI/UI.imageset"]
+	lookfeels ["../UI/UI.looknfeel"]
+	schemes	["../UI/UI.scheme"]
+	children [
+		DEF cursor GUIWindow {
+			type "UI/BlankWindow"
+			size 0.056640625 0.109375
+			position 0.3388671875 0.5286458333333334
+			angle 0.2
+			properties [
+				"BoxBackground" "set:UI image:cursor_hand_bg"
+			]
+			children [
+				GUIWindow {
+					type "UI/BlankWindow"
+					position 0 0.5
+					children [
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0 -0.5
+							properties [
+								"BoxBackground" "set:UI image:cursor_hand_fill"
+							]
+						}
+					]
+				}
+				GUIWindow {
+					type "UI/BlankWindow"
+					properties [
+						"BoxBackground" "set:UI image:cursor_hand_mask"
+					]
+				}
+			]
+		}
+
+	]
+}
+
+Box{}

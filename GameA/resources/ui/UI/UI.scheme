@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<GUIScheme Name="UI">
+	<FalagardMapping WindowType="UI/BlankWindow" TargetType="DefaultWindow" Renderer="Falagard/Default" LookNFeel="UI/BlankWindow"/>
+</GUIScheme>

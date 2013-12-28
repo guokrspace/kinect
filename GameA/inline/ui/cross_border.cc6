@@ -1,0 +1,52 @@
+#VRML V2.0 utf8
+
+#GUIGroup {
+#	imagesets ["../../resources/ui/UI/UI.imageset"]
+#	lookfeels ["../../resources/ui/UI/UI.looknfeel"]
+#	schemes	["../../resources/ui/UI/UI.schema"]
+#	children [
+#		DEF	crossUI GUIWindow {
+#			type "UI/BlankWindow"
+#			position 0 0
+#			size  0.02 1
+#			properties [
+#				"BoxBackground" "set:UI image:waring_left"
+#			]
+#		}
+#	]
+#}
+DEF	CrossUI GUIWindow {
+	type "UI/BlankWindow"
+	position 0 0
+	size 1 1			
+	visible	FALSE
+	alpha 1
+	children [
+		DEF	lCrossUI GUIWindow {
+			type "UI/BlankWindow"
+			position 0 0
+			size  0.134 1
+			visible	FALSE
+			zorder 100
+			properties [
+				"BoxBackground" "set:UI image:waring_left"
+			]
+		}
+		DEF	rCrossUI GUIWindow {
+			type "UI/BlankWindow"
+			size  0.134 1
+			visible	FALSE
+			zorder 100
+			horizontalAlignment	RIGHT
+			properties [
+				"BoxBackground" "set:UI image:waring_right"
+			]
+		}
+	]
+}
+
+
+
+
+
+

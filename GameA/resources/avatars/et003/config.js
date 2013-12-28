@@ -1,0 +1,17 @@
+define(
+	{
+		"base":"resources/avatars/et003/",
+		"bone":"bone.csf",
+		"meshSet":[
+			{
+				"name":"normal",
+				"mesh":["mesh.cmf"]
+			}
+		],
+		"texture":"waixingren_03.jpg",
+		"animation":{
+			"fly":{"alias":"fly","type":1,"name":"ani1.caf"},
+			"dead":{"alias":"dead","type":1,"name":"ani2.caf"}
+        }
+	}
+);

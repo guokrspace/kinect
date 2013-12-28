@@ -1,0 +1,70 @@
+/**
+ * Created with JetBrains WebStorm.
+ * User: zhangzd
+ * Date: 13-1-22
+ * Time: …œŒÁ10:50
+ */
+
+define(function (require, exports, module) {
+	var root = this, state = false,
+		log = require("core/Logger").getLog(),
+		MSEvent = require("core/Event").getInstance("MSEvent"),
+		ActionEvent = require("core/Event").getInstance("ActionEvent"),
+		Transformation = require("utils/Transformation"),
+		oDepth = {},
+		tempRHand = new SFVec3f(),tempRWaist = new SFVec3f(),tempRElbow = new SFVec3f(),
+		tempLShoulder = new SFVec3f(),tempRShoulder = new SFVec3f(),
+		shoulderVec = new SFVec3f(-1,0,0),minusYVec = new SFVec3f(0,-1,0),
+		bigArmVec = new SFVec3f(),frontArmVec = new SFVec3f(),armVec = new SFVec3f(),
+		angleArm_Y,angleArm_Shoulder,angleElbow,
+		rHandPos = new SFVec3f(),actionState = "off";
+
+
+	function changeSkeletonData(hipCenter, spine, shoulderCenter, head, leftShoulder, leftElbow, leftWrist, leftHand, rightShoulder, rightElbow, rightWrist, rightHand, leftHip, leftKnee, leftAnkle, leftFoot, rightHip, rightKnee, rightAnkle, rightFoot){
+		if(state){
+			tempRHand.setValue(rightHand.x-oDepth.width/2,oDepth.height/2-rightHand.y,rightHand.z/1000/oDepth.ratioZ);
+			tempRWaist.setValue(rightWrist.x-oDepth.width/2,oDepth.height/2-rightWrist.y,rightWrist.z/1000/oDepth.ratioZ);
+			tempRElbow.setValue(rightElbow.x-oDepth.width/2,oDepth.height/2-rightElbow.y,rightElbow.z/1000/oDepth.ratioZ);
+			tempLShoulder.setValue(leftShoulder.x-oDepth.width/2,oDepth.height/2-leftShoulder.y,leftShoulder.z/1000/oDepth.ratioZ);
+			tempRShoulder.setValue(rightShoulder.x-oDepth.width/2,oDepth.height/2-rightShoulder.y,rightShoulder.z/1000/oDepth.ratioZ);
+
+//			shoulderVec.setValue(tempLShoulder.subtract(tempRShoulder));
+			bigArmVec.setValue(tempRShoulder.subtract(tempRElbow));
+			frontArmVec.setValue(tempRWaist.subtract(tempRElbow));
+			armVec.setValue(tempRWaist.subtract(tempRShoulder));
+
+			//∏Ï≤≤”Î-Y∑ΩœÚº–Ω«
+			angleArm_Y = Transformation.getAngle(minusYVec,armVec,true);
+//			armVec.y = 0;
+			//¥Û±€”Î«∞±€º–Ω«
+			angleElbow = Transformation.getAngle(bigArmVec,frontArmVec,true);
+			if(rightHand.y<(spine.y)&&angleArm_Y>(Math.PI/3)){
+				if(actionState=="off"){actionState = "on";}
+				//∏Ï≤≤”ÎºÁº–Ω«
+				angleArm_Shoulder = Transformation.getAngle(shoulderVec, armVec, true);
+				rHandPos.setValue(oDepth.abspos.x+tempRHand.x*oDepth.ratioX,oDepth.abspos.y+tempRHand.y*oDepth.ratioY,oDepth.abspos.z);
+				ActionEvent.trigger("holdResult",angleArm_Shoulder,rHandPos,true);
+			}else{
+				if(actionState=="on"){
+					actionState = "off";
+					ActionEvent.trigger("holdResult",angleArm_Shoulder,rHandPos,false);
+				}
+			}
+		}
+	}
+
+	exports.init = function (oParam){
+		if (!state) {
+			oDepth = oParam;
+			MSEvent.bind("frameChange",changeSkeletonData);
+			state = true;
+		}
+	};
+
+	exports.destroy = function () {
+		if (state) {
+			MSEvent.unbind("frameChange",changeSkeletonData);
+			state = false;
+		}
+	};
+});

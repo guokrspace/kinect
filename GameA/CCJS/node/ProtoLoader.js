@@ -1,0 +1,1 @@
+define(function(d,e){var b={};d("core/Logger").getLog();e.load=function(c){var a="PROTO_"+d("utils/Md5").hex_md5(c);a in b||(b[a]={},b[a].node=new SFNode("EXTERNPROTO "+a+'[]["'+c+'"]'),b[a].uri=c);return a}});

@@ -1,0 +1,83 @@
+#VRML V2.0 utf8
+DEF	system System {}
+Box{}
+
+GUIGroup {
+	imagesets ["UI.imageset"]
+	lookfeels ["UI.looknfeel"]
+	schemes	["UI.scheme"]
+	children [
+		DEF cursorUI GUIWindow {
+			type "UI/BlankWindow"
+			size 0.056640625 0.109375
+			position 0 0
+			angle 0.2
+			zorder 300
+			properties [
+				"BoxBackground" "set:UI image:cursor_hand_bg"
+			]
+			children [
+				GUIWindow {
+					type "UI/BlankWindow"
+					position 0 1
+					children [
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0 -1
+							properties [
+								"BoxBackground" "set:UI image:cursor_hand_fill"
+							]
+						}
+					]
+				}
+				GUIWindow {
+					type "UI/BlankWindow"
+					properties [
+						"BoxBackground" "set:UI image:cursor_hand_mask"
+					]
+				}
+			]
+		}
+	]
+}
+
+DEF	script Script{
+	eventIn	SFVec2f	position
+
+	field SFNode cursorUI USE cursorUI
+	url	"javascript:
+	function initialize(){
+		
+	}
+	function position(pos){
+		cursorUI.position=pos;	
+	}
+	"
+}
+ROUTE system.position TO script.position
+
+#DEF script Script {
+#	field SFNode window1 USE window1
+#	eventIn	SFInt32	keyup
+#	eventIn	SFBool isClick
+#	url	"javascript:
+#	function initialize(){
+		
+#	}
+
+#	function keyup(v){
+#		if(v==49){
+#//			window1.properties[1] = 'set:UI image:color_00ff00';
+#		}
+#	}
+
+#	function isClick(v){
+#		if(!v){
+#			window1.properties[1] = 'set:UI image:color_00ff00';
+#		}
+#	}
+#	"
+#}
+
+#ROUTE system.keyup TO script.keyup
+#ROUTE window2.isLeftActive TO script.isClick

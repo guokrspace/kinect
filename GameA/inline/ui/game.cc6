@@ -1,0 +1,162 @@
+#VRML V2.0 utf8
+DEF	UIS GUIWindow {
+	type "UI/BlankWindow"
+	position 0 0
+	size 1 1
+	visible	FALSE
+	children [
+		GUIWindow {
+			type "UI/BlankWindow"			
+			size 0.1333 0.237
+			children [
+				GUIWindow {
+					type "UI/BlankWindow"
+					size 1 1
+					properties [
+						"BoxBackground" "set:UI image:mask"
+					]	
+					zorder 20
+				}
+				DEF	targetBullet GUIWindow {
+					type "UI/BlankWindow"
+					size 0.7 0.7
+					alpha 1
+					properties [
+						"BoxBackground" "set:UI image:color_blank"
+					]
+					zorder	10			
+					horizontalAlignment	CENTER
+					verticalAlignment  CENTER
+			
+				}
+				GUIWindow {
+					type "UI/BlankWindow"
+					size 1 1
+					properties [
+						"BoxBackground" "set:UI image:mask_bg"
+						"BgColour" "990066CC"
+					]						  
+				}
+
+
+				DEF	bullets GUIWindow {
+					type "UI/BlankWindow"
+					size 1.5 0.3
+					position -1.5 0.65
+					clippedByParent	FALSE
+					children [
+						GUIWindow {
+							type "UI/BlankWindow"
+							position -0.4 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:UI image:color_blank"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position -0.2 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:UI image:color_blank"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:UI image:color_blank"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0.2 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:UI image:color_blank"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0.4 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:UI image:color_blank"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+					]
+				}
+			]
+			verticalAlignment BOTTOM
+			horizontalAlignment	RIGHT
+		}
+
+		DEF	globalTime GUIWindow {
+			type "UI/BlankWindow"
+			size 0.2 0.08
+			zorder 20			   
+			text "02:00"
+			properties [							   
+				"TextFont" "font50"
+				"TextColour" "FFFF9900"
+			]
+			horizontalAlignment	CENTER
+			verticalAlignment TOP
+		}
+
+		DEF	aniUI GUIWindow {
+			type "UI/BlankWindow"
+			size 0.2 0.08
+			zorder 20	
+			alpha 0
+			properties [							   
+				"TextFont" "font60"
+				"TextColour" "FFFF3344"
+			]
+			horizontalAlignment	CENTER
+			verticalAlignment CENTER
+		}
+
+		DEF	scores GUIWindow {
+			type "UI/BlankWindow"
+			size 0.3 0.08
+			zorder 20			   
+			text "SCORE:0"
+			properties [							   
+				"TextFont" "font50"
+				"TextColour" "FFFF9900"
+				"HorzLabelFormatting" "LeftAligned"
+				"Padding_left" "10"
+			]
+			horizontalAlignment	LEFT
+			verticalAlignment TOP
+		}
+
+
+		DEF	pausePanel GUIWindow {
+			type "UI/BlankWindow"
+			position 0 0
+			size 1 1
+			zorder 100  
+			visible	FALSE
+			text "PAUSED"
+			properties [
+				"BoxBackground" "set:UI image:color_ffffff"
+				"BgColour" "DDFFFFFF"
+				"TextFont" "font120"
+				"TextColour" "FFFF7979"
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<Imageset Name="FRUIT" Imagefile="UI.png" >
+	<Image Name="huluobo" XPos="384" YPos="384" Width="128" Height="128" />
+	<Image Name="xihongshi" XPos="256" YPos="384" Width="128" Height="128" />
+	<Image Name="putao" XPos="128" YPos="384" Width="128" Height="128" />
+	<Image Name="ningmeng" XPos="0" YPos="384" Width="128" Height="128" />
+	<Image Name="huanggua" XPos="384" YPos="256" Width="128" Height="128" />
+	<Image Name="yezi" XPos="256" YPos="256" Width="128" Height="128" />
+	<Image Name="pingguo" XPos="128" YPos="256" Width="128" Height="128" />
+	<Image Name="huolongguo" XPos="0" YPos="256" Width="128" Height="128" />
+	<Image Name="xigua" XPos="384" YPos="128" Width="128" Height="128" />
+	<Image Name="boluo" XPos="256" YPos="128" Width="128" Height="128" />
+	<Image Name="mihoutao" XPos="128" YPos="128" Width="128" Height="128" />
+	<Image Name="chengzi" XPos="0" YPos="128" Width="128" Height="128" />
+	<Image Name="li" XPos="384" YPos="0" Width="128" Height="128" />
+	<Image Name="xiangjiao" XPos="256" YPos="0" Width="128" Height="128" />
+	<Image Name="shiliu" XPos="128" YPos="0" Width="128" Height="128" />
+	<Image Name="caomei" XPos="0" YPos="0" Width="128" Height="128" />
+</Imageset>
