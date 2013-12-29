@@ -1,0 +1,1 @@
+define(function(g,d){var h=g("core/Logger").getLog();d.read=function(b,c){if(File.exists(b)){var e=new File(b),a=e.read();null!=a.match(/.+/g)?(e.close(),c(a)):c("")}else c(null)};d.write=function(b,c,e){if(!b)return!1;try{var a=new File(b),f=a.read(),f=!e&&1<f.length?f+v:c;a.write(f)}catch(d){h.error("向文件写入操作时发生错误 "+d)}a.flush();a.close()}});

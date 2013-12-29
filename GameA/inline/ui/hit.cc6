@@ -1,0 +1,17 @@
+#VRML V2.0 utf8
+
+DEF	glintUI GUIWindow {
+	type "UI/BlankWindow"
+	position 0 0
+	size 0.5 0.6666666666666666667
+	zorder 1
+	visible	FALSE
+	maxSize	2 2
+	properties [
+		"bgColor" "FFCC9900"
+		"BoxBackground"	 "set:_file image:../HIT/glint.png"
+	]
+	horizontalAlignment	CENTER
+	verticalAlignment CENTER
+
+}

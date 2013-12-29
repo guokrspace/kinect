@@ -1,0 +1,193 @@
+#VRML V2.0 utf8
+
+DEF fruitAmmo Group {
+	children [
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "001.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "002.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "003.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "004.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "005.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "006.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "007.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "008.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "009.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "010.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "011.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "012.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "013.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "014.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "015.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "016.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "017.lyx"}	
+					]
+				}
+			]
+		}
+	]
+}

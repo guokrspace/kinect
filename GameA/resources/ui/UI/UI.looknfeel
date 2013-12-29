@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<Falagard>
+	<!--
+    ***************************************************
+        UI/BlankWindow
+    ***************************************************
+    -->
+	<WidgetLook name="UI/BlankWindow">
+		<PropertyDefinition name="BoxBackground" initialValue="" redrawOnWrite="true"/>
+		<PropertyDefinition name="VertImageFormatting" initialValue="Stretched" redrawOnWrite="true"/>
+		<PropertyDefinition name="HorzImageFormatting" initialValue="Stretched" redrawOnWrite="true"/>
+		<PropertyDefinition name="VertLabelFormatting" initialValue="CentreAligned"/>
+		<PropertyDefinition name="HorzLabelFormatting" initialValue="CentreAligned"/>
+		<PropertyDefinition name="DisabledColour" initialValue="FF7F7F7F" redrawOnWrite="true"/>
+		<PropertyDefinition name="BgColour" initialValue="FFFFFFFF" redrawOnWrite="true"/>
+		<PropertyDefinition name="Padding_left" initialValue="0"/>
+		<PropertyDefinition name="Padding_top" initialValue="0"/>
+		<PropertyDefinition name="Padding_bottom" initialValue="0"/>
+		<PropertyDefinition name="Padding_right" initialValue="0"/>
+
+		<PropertyDefinition name="TextFont" initialValue="font18"/>
+		<PropertyDefinition name="TextColour" initialValue="FFFFFFFF" redrawOnWrite="true"/>
+		<PropertyDefinition name="TextShadowColour" initialValue="FF000000" redrawOnWrite="true"/>
+		<PropertyDefinition name="Shadow_width" initialValue="0"/>
+		<PropertyDefinition name="Shadow_height" initialValue="2"/>
+		<PropertyDefinition name="ShowShadow" initialValue="0"/>
+		<ImagerySection name="normal">
+			<ImageryComponent>
+				<Area>
+					<Dim type="LeftEdge">
+						<AbsoluteDim value="0"/>
+					</Dim>
+					<Dim type="TopEdge">
+						<AbsoluteDim value="0"/>
+					</Dim>
+					<Dim type="Width">
+						<UnifiedDim scale="1" type="Width"/>
+					</Dim>
+					<Dim type="Height">
+						<UnifiedDim scale="1" type="Height"/>
+					</Dim>
+				</Area>
+				<ImageProperty name="BoxBackground"/>
+				<VertFormatProperty name="VertImageFormatting"/>
+				<HorzFormatProperty name="HorzImageFormatting"/>
+			</ImageryComponent>
+		</ImagerySection>
+		<ImagerySection name="label">
+			<TextComponent>
+				<Area>
+					<Dim type="LeftEdge">
+						<PropertyDim name="Padding_left"/>
+					</Dim>
+					<Dim type="TopEdge">
+						<PropertyDim name="Padding_top"/>
+					</Dim>
+					<Dim type="Width">
+						<UnifiedDim scale="1" type="Width">
+							<DimOperator op="Subtract">
+								<PropertyDim name="Padding_left">
+									<DimOperator op="Add">
+										<PropertyDim name="Padding_right"/>
+									</DimOperator>
+								</PropertyDim>
+							</DimOperator>
+						</UnifiedDim>
+					</Dim>
+					<Dim type="Height">
+						<UnifiedDim scale="1" type="Height"/>
+					</Dim>
+				</Area>
+				<TextProperty name="Text"/>
+				<FontProperty name="TextFont"/>
+				<ColourProperty name="TextColour"/>
+				<VertFormatProperty name="VertLabelFormatting"/>
+				<HorzFormatProperty name="HorzLabelFormatting"/>
+			</TextComponent>
+		</ImagerySection>
+		<ImagerySection name="labelShadow">
+			<TextComponent>
+				<Area>
+					<Dim type="LeftEdge">
+						<PropertyDim name="Padding_left">
+							<DimOperator op="Add">
+								<PropertyDim name="Shadow_width"/>
+							</DimOperator>
+						</PropertyDim>
+					</Dim>
+					<Dim type="TopEdge">
+						<PropertyDim name="Padding_top">
+							<DimOperator op="Add">
+								<PropertyDim name="Shadow_height">
+									<DimOperator op="Multiply">
+										<PropertyDim name="ShowShadow"/>	
+									</DimOperator>
+								</PropertyDim>
+							</DimOperator>
+						</PropertyDim>
+					</Dim>
+					<Dim type="Width">
+						<UnifiedDim scale="1" type="Width">
+							<DimOperator op="Subtract">
+								<PropertyDim name="Padding_left">
+									<DimOperator op="Add">
+										<PropertyDim name="Padding_right"/>
+									</DimOperator>
+								</PropertyDim>
+							</DimOperator>
+						</UnifiedDim>
+					</Dim>
+					<Dim type="Height">
+						<UnifiedDim scale="1" type="Height">
+							<DimOperator op="Multiply">
+								<PropertyDim name="ShowShadow"/>	
+							</DimOperator>
+						</UnifiedDim>
+					</Dim>
+				</Area>
+				<TextProperty name="Text"/>
+				<FontProperty name="TextFont"/>
+				<ColourProperty name="TextShadowColour"/>
+				<VertFormatProperty name="VertLabelFormatting"/>
+				<HorzFormatProperty name="HorzLabelFormatting"/>
+			</TextComponent>
+		</ImagerySection>
+		<StateImagery name="Enabled">
+			<Layer>
+				<Section section="normal">
+					<ColourRectProperty name="BgColour"/>
+				</Section>
+				<Section section="labelShadow"/>
+				<Section section="label"/>
+			</Layer>
+		</StateImagery>
+		<StateImagery name="Disabled">
+			<Layer>
+				<Section section="labelShadow"/>
+				<Section section="label"/>
+				<Section section="normal">
+					<ColourProperty name="DisabledColour"/>
+				</Section>
+			</Layer>
+		</StateImagery>
+	</WidgetLook>
+</Falagard>

@@ -1,0 +1,112 @@
+#VRML V2.0 utf8
+
+
+Box{size 0.01 1 0.01}
+Box{size 1 0.01 0.01}
+Box{size 0.01 0.01 1}
+
+ShadowGroup	{
+	quality	1
+	children [
+		Material{
+			diffuseColor 1 1 1
+			emissiveColor 0.3 0.3 0.3
+			specularColor .77 .76 .76
+			ambientIntensity .14
+			shininess .9
+		}
+
+		DEF	bsGroup Group {}
+
+	]
+}
+DEF	sys System {}
+
+DEF sc Script {
+	field SFNode bsGroup USE	bsGroup
+	eventIn	SFInt32 keyup
+	url	"javascript:
+	var config,boneInstance,nowMesh=0,nowAni=0,initFlag = false;
+	function define(obj){
+		config = obj;
+	}
+
+	include('config.js');
+
+	
+	function createBone(conf){
+		var bs = '';
+		bs += '\nDEF bone Bone {\n';
+		bs += '\tbase \"'+conf.base+'\"\n';
+		bs += '\tskeleton \"'+conf.bone+'\"\n';
+		bs += '\tmeshSet [\n';
+
+		for(var i=0;i<conf.meshSet.length;i++){
+			bs += '\t\t\"'+conf.meshSet[i].name+'\" ';
+			for(var j=0;j<conf.meshSet[i].mesh.length;j++){
+				bs += '\"'+conf.meshSet[i].mesh[j]+'\" \"x\"';
+			}
+			bs += '\"\"\n';
+		}
+		bs += '\t]\n';
+
+
+
+		bs += '\tanimation [\n';
+
+		for(var i=0;i<conf.animation.length;i++){
+			bs += '\t\t\"'+conf.animation[i].name+'\"\n';
+		}
+
+		bs += '\t]\n';
+		bs += '}\n';
+		bsGroup.addChild(new SFNode(bs));
+	}
+
+
+	function createBoneInstance(conf){
+		var bone = createBone(conf);
+		var bsi = '';
+		bsi += '\nImageTexture{ url \"'+conf.texture+'\"}\n';
+		bsi += '\nBoneInstance {\n';
+		bsi += '\tclassname \"bone\"\n';
+		bsi += '\tanimCycle [\"'+conf.animation[nowAni].name+'\" \"0.1\" \"0.1\"]\n';
+		bsi += '\tmeshSet	\"'+conf.meshSet[nowMesh].name+'\"\n';
+		bsi += '}';
+		node = new SFNode(bsi);
+		boneInstance = node.getChild(1);
+		bsGroup.addChild(node);
+
+		setTimeout('resize()',0.5);
+	}
+
+	createBoneInstance(config);
+
+	function resize(){
+		Browser.command(33054);
+	}
+
+	function keyup(v){
+		switch(v){
+			case 49:
+				boneInstance.animClear = new MFString(config.animation[nowAni].name,'0.3');
+				nowAni++;
+				if(nowAni==config.animation.length){
+					nowAni = 0;
+				}
+				boneInstance.animCycle = new MFString(config.animation[nowAni].name,'0.1','0.1');
+				break;
+			case 50:
+				nowMesh++;
+				if(nowMesh==config.meshSet.length){
+					nowMesh = 0;
+				}
+				boneInstance.meshSet = config.meshSet[nowMesh].name;
+				break;
+		}
+	}
+
+	"
+}
+
+ROUTE sys.keyup	TO sc.keyup

@@ -1,0 +1,636 @@
+#VRML V2.0 utf8
+
+DEF fruit_ufo_group Group {
+	children [
+		TransparencyType{value DELAYED_BLEND}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "001.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -1
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "002.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "003.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "004.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "005.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "006.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "007.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "008.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "009.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "010.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "011.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "012.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "013.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "014.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "015.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "016.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+		Switch {
+			whichChoice	-1
+			choice [
+				Transform {
+					translation	0 0 0
+					children [
+						Inline {url "017.lyx"}	
+					]
+				}
+				Transform {
+					translation	0 -1.2 0
+					scale 0.5 0.5 0.5
+					children [
+						Transform{
+							translation 0 1.5 0 
+							children[
+								Switch{
+									choice [
+										Material {
+											diffuseColor .48 .53 .6 
+											specularColor .32 .4 .4 
+											emissiveColor .25 .27 .31 
+											ambientIntensity .0667 
+											shininess .54 
+											transparency .55
+										} 
+										Sphere {radius 2.2}
+									] 
+									whichChoice -3
+								}
+							]
+						}
+						Inline {url "../tranUFO/ufo/main.lyx"}	
+					]
+				}
+			]
+		}
+	]
+}

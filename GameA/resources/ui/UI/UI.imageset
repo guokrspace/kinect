@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<Imageset Name="UI" Imagefile="UI.png" >
+	<Image Name="progress_b" XPos="265" YPos="942" Width="309" Height="25" />
+	<Image Name="progress_m" XPos="265" YPos="916" Width="309" Height="25" />
+	<Image Name="progress_f" XPos="265" YPos="890" Width="309" Height="25" />
+	<Image Name="cursor_hand_bg" XPos="515" YPos="551" Width="82" Height="120" />
+	<Image Name="cursor_hand_fill" XPos="598" YPos="430" Width="82" Height="120" />
+	<Image Name="cursor_hand_mask" XPos="515" YPos="430" Width="82" Height="120" />
+	<Image Name="num_5" XPos="209" YPos="908" Width="50" Height="50" />
+	<Image Name="num_4" XPos="158" YPos="908" Width="50" Height="50" />
+	<Image Name="num_3" XPos="107" YPos="908" Width="50" Height="50" />
+	<Image Name="num_2" XPos="56" YPos="908" Width="50" Height="50" />
+	<Image Name="num_1" XPos="5" YPos="908" Width="50" Height="50" />
+	<Image Name="color_000000" XPos="38" YPos="1015" Width="4" Height="4" />
+	<Image Name="color_ffffff" XPos="31" YPos="1015" Width="4" Height="4" />
+	<Image Name="color_0000ff" XPos="24" YPos="1015" Width="4" Height="4" />
+	<Image Name="color_00ff00" XPos="17" YPos="1015" Width="4" Height="4" />
+	<Image Name="color_ff0000" XPos="10" YPos="1015" Width="4" Height="4" />
+	<Image Name="color_blank" XPos="3" YPos="1015" Width="4" Height="4" />
+	<Image Name="waring_right" XPos="4" YPos="996" Width="139" Height="4" />
+	<Image Name="waring_left" XPos="4" YPos="971" Width="139" Height="4" />
+	<Image Name="menu_score_bg" XPos="512" YPos="0" Width="512" Height="348" />
+	<Image Name="menu_button_bg" XPos="0" YPos="348" Width="512" Height="348" />
+	<Image Name="menu_bg" XPos="0" YPos="0" Width="512" Height="348" />
+	<Image Name="score_icon" XPos="431" YPos="774" Width="105" Height="106" />
+	<Image Name="index_design_icon" XPos="324" YPos="774" Width="105" Height="106" />
+	<Image Name="index_top_icon" XPos="217" YPos="774" Width="105" Height="106" />
+	<Image Name="index_train_icon" XPos="110" YPos="774" Width="105" Height="106" />
+	<Image Name="index_newgame_icon" XPos="3" YPos="774" Width="105" Height="106" />
+	<Image Name="index_design" XPos="737" YPos="947" Width="285" Height="75" />
+	<Image Name="index_top" XPos="737" YPos="872" Width="285" Height="75" />
+	<Image Name="index_train" XPos="737" YPos="797" Width="285" Height="75" />
+	<Image Name="index_newgame" XPos="737" YPos="722" Width="285" Height="75" />
+	<Image Name="button1_normal" XPos="1" YPos="697" Width="285" Height="75" />
+	<Image Name="restart" XPos="748" YPos="574" Width="272" Height="91" />
+	<Image Name="train" XPos="748" YPos="482" Width="272" Height="91" />
+	<Image Name="continue" XPos="748" YPos="390" Width="272" Height="91" />
+	<Image Name="playagain" XPos="748" YPos="350" Width="149" Height="38" />
+	<Image Name="score_title" XPos="515" YPos="350" Width="231" Height="78" />
+</Imageset>

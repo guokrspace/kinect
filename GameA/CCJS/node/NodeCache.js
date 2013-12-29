@@ -1,0 +1,1 @@
+define(function(e,b){e("core/Logger").getLog();var d={};b.basePath="resources/models/";b.cache=function(c){var a;a=b.basePath+c;a=fullpath(a);a=a.replace(/\/|\.|:/g,"_");a in d||(c=(new SFNode("DEF "+a+' Inline{ url "'+b.basePath+c+'" }')).children[0],d[a]={id:a,node:c,state:0});return d[a]}});

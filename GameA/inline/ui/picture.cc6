@@ -1,0 +1,37 @@
+#VRML V2.0 utf8
+
+DEF picUI GUIWindow {
+	type "UI/BlankWindow"
+	position 0 0
+	size 1 1			
+	visible	FALSE
+	alpha 1
+	children [
+		DEF pic_window1 GUIWindow {
+			type "UI/BlankWindow"
+			position 0 0
+			size 1 1
+			properties [
+				"BoxBackground" ""
+			]
+		}
+		DEF pic_window2 GUIWindow {
+			type "UI/BlankWindow"
+			position 1 0
+			size 1 1
+			properties [
+				"BoxBackground" ""
+			]
+		}
+	]
+}
+DEF plotUI GUIWindow {
+	type "UI/BlankWindow"
+	position 0 0
+	size 1 1			
+	visible	FALSE
+	alpha 1
+	properties [
+		"BoxBackground" ""
+	]
+}

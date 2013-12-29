@@ -1,0 +1,25 @@
+#VRML V2.0 utf8
+
+DEF logo GUIWindow {
+	type "UI/BlankWindow"
+	position 0 0
+	size 1 1
+	zorderEnabled  TRUE
+	zorder 500
+	visible	FALSE
+	alpha 1
+	properties [
+		"BoxBackground" ""
+	]
+}
+DEF	maskMovieUI GUIWindow {
+	type "UI/BlankWindow"
+	size 0.6 0.8
+	position 0 0.4
+	zorder 1000
+	properties [
+		"BoxBackground" "__movieSceneTexture"
+	]
+#	verticalAlignment CENTER
+	horizontalAlignment	CENTER
+}

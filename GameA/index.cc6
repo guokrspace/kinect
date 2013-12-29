@@ -1,0 +1,347 @@
+#VRML V2.0 utf8
+#Background {
+#	skyColor [ 1 1 1, .9 .9 1, 0 .05 .1 ]
+#	skyAngle [ .1, 2 ]
+#}
+
+
+DEF	__system System	{
+	GUIBlock BLOCK_NONE
+}
+DEF __navigationInfo NavigationInfo { ability "ALL" }
+DEF __camera PerspectiveCamera {
+	position 0 0 0		   
+	aspectRatio 1.333333  
+	heightAngle	0.3
+	viewportMapping CROP_VIEWPORT_NO_FRAME
+}
+
+#加载字体
+Inline {url "inline/font.cc6" asynchronism FALSE }
+
+
+#定义常量节点
+Switch{	
+	choice [ 
+		DEF LINES DrawStyle { style LINES } 
+		DEF UNVISIBLE DrawStyle { style INVISIBLE	} 
+		DEF UNPICKABLE PickStyle { style UNPICKABLE } 
+	] 
+	whichChoice -1
+}
+
+#定义资源组
+DEF	__resource Switch {
+	choice [
+		DEF moviePiece IndexedFaceSet {
+        	coord Coordinate {		   
+				point [
+					-.16 -.12 0,
+					.16 -.12 0,
+					.16 .12 0,
+					-.16 .12 0]
+        	}
+        	coordIndex [0 1 2 3]
+    	}
+	]
+	whichChoice -1
+}
+DEF __movieGroup Group {
+	children [
+		OrthographicCamera {
+			aspectRatio	1
+		}
+		DEF __movieSceneTexture SceneTexture {
+			refresh	TRUE
+			size 256 256
+			backgroundColor	1 1 1 0
+			scene Group {
+				children [
+					PickStyle {style UNPICKABLE}
+					Material{
+						transparency 0.3	 
+						diffuseColor 0 0 0  
+						emissiveColor 0 0 0 
+					}
+					Complexity	{textureQuality	0}
+					DEF __depthTrans Transform {
+						children [
+							DEF	depthMovie MovieTexture{url "resources/videos/1.wmv" loop FALSE }
+							IndexedFaceSet {
+        						coord Coordinate {		   
+									point [
+										-1 -.5 0,
+										1 -.5 0,
+										1 1 0,
+										-1 1 0]
+        						}
+        						coordIndex [0 1 2 3]
+    						}
+						]
+					}
+				]
+			}
+			transparencyFunction ALPHA_BLEND
+		}
+	]
+}
+
+#定义全局Timer驱动器
+DEF drawsensor_for_timer DrawSensor{}
+
+TransparencyType {value DELAYED_BLEND}
+
+#定义三个节点容器,通常将动态创建的节点增加到__groupMiddle中，需要前置的节点增加到__groupTop，需要后置的节点增加到__groupBottom
+
+DEF	__itemG Group {}
+DEF	__groupMiddle Group {}
+DEF	__groupBottom Group {}
+DEF	__groupTop Group {
+	children [
+		DEF areaTipSwi Switch {
+			choice [	
+				Annotation{
+					children [
+						Transform {
+							scale 0.55 0.55 0.55
+							translation	3.7 2.15 -25
+#							rotation 1 0 0 -0.8
+							children [
+								ImageTexture{url "resources/images/areaBg.png"}
+								IndexedFaceSet{
+									coord Coordinate {
+										point [
+											-1.7 -2.48 0
+											1.7 -2.48 0
+											1.7 2.48 0
+											-1.7 2.48 0
+										]
+									}
+									coordIndex [0 1 2 3 -1]
+									texCoord TextureCoordinate {
+										point [
+											0 0 1 0 1 1 0 1
+										]
+									}
+									texCoordIndex [0 1 2 3]
+								}
+								DEF areaTipArrow Transform {
+									children [
+										Rotation {rotation 0 0 1 -3.14}
+										ImageTexture{url "resources/images/arrow.png"}
+										IndexedFaceSet{
+											coord Coordinate {
+												point [
+													-0.28 -0.89 0
+													0.28 -0.86 0
+													0.28 0.24 0
+													-0.28 0.24 0
+												]
+											}
+											coordIndex [0 1 2 3 -1]
+											texCoord TextureCoordinate {
+												point [
+													0 0 1 0 1 1 0 1
+												]
+											}
+											texCoordIndex [0 1 2 3]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+				Annotation {
+					children [
+						Transform {
+							scale 0.55 0.55 0.55
+							translation	3.7 2.15 -25
+							children [														  
+								DEF	areaTipBorderSwi Switch	{
+									choice [
+										ImageTexture{url "resources/images/areaBg_hover.png"}
+										IndexedFaceSet{
+											coord Coordinate {
+												point [
+													-1.7 -2.48 0
+													1.7 -2.48 0
+													1.7 2.48 0
+													-1.7 2.48 0
+												]
+											}
+											coordIndex [0 1 2 3 -1]
+											texCoord TextureCoordinate {
+												point [
+													0 0 1 0 1 1 0 1
+												]
+											}
+											texCoordIndex [0 1 2 3]
+										}
+									]
+									whichChoice	-1
+								}
+							]
+						}
+					]
+				}
+			]
+			whichChoice	-1
+		}
+	]
+}
+DEF	__script Script {
+	#以下eventIn是CCJS框架事件触发所依赖的入事件,入事件名称不可修改,否则将找不到对应事件
+	immediate ["system_keyUp" "system_keyDown" "load_success_in"]
+	#UIEvent支持的所有事件
+	eventIn SFBool ui_over
+	eventIn SFBool ui_active
+	eventIn SFBool ui_selected
+	eventIn	SFBool ui_click
+	eventIn SFBool ui_leftActive
+	eventIn SFBool ui_doubleClick
+	eventIn SFBool ui_rightActive
+	eventIn SFFloat ui_value
+	eventIn SFInt32 ui_keyUp
+	eventIn SFInt32 ui_keyDown
+	eventIn SFVec2f ui_size
+	eventIn	SFVec2f	ui_position
+	eventIn SFInt32 ui_selTab
+	eventIn SFString ui_text
+	#UI布局所需要的入事件
+	eventIn	SFVec2f	windowSize
+	#SystemEvent支持的所有事件
+	eventIn	SFInt32	system_keyUp
+	eventIn	SFInt32	system_keyDown
+	eventIn	SFInt32	system_gesture
+	eventIn	SFVec2f	system_position
+	eventIn	SFInt32	system_wheel
+	#NodeEvent支持的所有事件
+	eventIn	SFBool x3d_active
+	eventIn	SFBool x3d_over
+	eventIn	SFVec3f	x3d_hitPoint
+	eventIn	SFVec3f	x3d_hitNormal
+	eventIn	SFVec2f	x3d_hitTexCoord
+	eventIn	SFVec3f	x3d_translation
+	eventIn	SFRotation x3d_rotation
+	eventIn	SFVec3f	x3d_scale
+	#Timer所需要的入事件	
+	eventIn SFTime time_for_timer
+	#ResourceLoader所需要的入事件
+	eventIn	SFBool load_success_in
+	#ImageLoader所需要的入事件
+	eventIn SFInt32 IMAGE_HEIGHT_FOR_IMAGE_LOADER
+	#ajax状态监听入事件
+	eventIn	SFInt32	stateIn
+
+	#定义环境节点常量，在模块中可直接通过常量名引用
+	field SFNode CAMERA USE __camera
+	field SFNode NAVIGATIONINFO USE __navigationInfo
+	field SFNode SYSTEM USE __system
+	field SFNode GROUPTOP USE __groupTop
+	field SFNode GROUPMID USE __groupMiddle
+	field SFNode GROUPBOT USE __groupBottom
+
+	url	"javascript:
+	//加载配置文件
+	include('config.js');
+
+	//加载CCJS框架
+    include(CConfig.CCJSPath+'/CC.js');
+
+	//定义全局常量
+	var _,//工具方法模块
+		RS,//资源配置模块
+		CURSOR = {
+			NORMAL:1,
+			SEEK:2,
+			HAND:3,
+			HELP:4,
+			TEXT:5,
+			DISABLE:7,
+			MOVE:9,
+			RT2LB:10,
+			B2T:11,
+			LT2RB:12,
+			L2R:13,
+			MOVEUP:14,
+			BUSY:15
+		},//定义全局光标
+		ROOT = this,
+		ROOTSCENE = SFNode.get('lyinux->userscenegraphroot').children[0];
+
+	function initialize(){
+		//设置抗锯齿级别
+		Browser.setOption('antialias',CConfig.env.antialias); 
+
+		//初始化光标
+		initCursor(CConfig.cursor);
+
+		//配置CCJS
+		CC.config(
+			{
+				'patch':['setTimeout','extraSF','SFNode']
+			}
+		);
+
+		//加载日志模块，正式部署时请将level设置为off
+		CC.use('core/Logger',function(log4l){
+			log4l.config({
+				level : 'debug', //off, debug, info, warn, error
+				layout : '[%p]@%c{2}#%l:%r - %m'
+			});
+		});
+
+		//加载Lang包
+		CC.use('core/Lang',function(lang){			
+			_ = lang;
+		});
+
+		//加载资源配置模块
+		CC.use('./resource.config',function(rs){
+			RS = rs;
+		});
+
+		//配置vQurey,可选
+		/*
+		CC.use('network/Ajax',function(ajax){
+			ajax.ajaxSetup({
+				thisScript:ROOT,
+				stateListener:'stateIn'
+			});
+		});
+		*/
+
+
+		//配置ResourceLoader,可选
+		/*
+		CC.use('node/ResourceLoader',function(rl){
+			rl.config({
+				'node_ui' : 'inline/ui/',
+				'res_ui' : 'resources/ui/',
+				'res_scene' : 'resources/scenes/'
+			});
+		});
+		*/
+
+		//初始化工程
+		CC.use('./modules/init',function(project){
+			project.init();	
+		});
+	}
+
+	function initCursor(config){
+		if(config){
+			var clen = config.length;
+			for(var i=0;i<clen;i++){
+				loadCursor(config[i].id,config[i].path);
+				CURSOR[config[i]] = config[i].id;
+			}
+		}
+//		setCursor(CURSOR.NORMAL);
+	}
+	"
+}
+
+#避免初始化工程时出现摄像机异常的警告信息，防止停止绘制问题出现
+Group {	children [ USE UNPICKABLE USE UNVISIBLE Box{}]}

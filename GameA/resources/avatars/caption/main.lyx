@@ -1,0 +1,92 @@
+#VRML V2.0 utf8
+
+
+Switch {
+	choice [
+		DEF woman01 Bone {
+			skeleton "bone.csf"
+	
+			meshSet	[
+				"default" 
+				"body_mesh.cmf"	"xxx"
+				"eye_mesh.cmf"	"xxx"
+				#		"touzhao.cmf"	"xxx"
+		
+			]
+		}
+	]
+	whichChoice	-1
+}
+#DEF __camera PerspectiveCamera {
+#	position 0 0 0		   
+#	aspectRatio 1.333333  
+#	heightAngle	0.3
+#	viewportMapping CROP_VIEWPORT_NO_FRAME
+#}
+DEF caption_trans Transform {
+	translation	0 0 -3
+	rotation 0 1 0 -0.4
+	scale 0.2 0.2 0.2
+	children [
+		DEF head Transform {
+			children [ 
+				Inline {
+					url "head/touzhao.lyx"
+				}
+			]
+		}
+		Material{
+    		diffuseColor 1 1 1
+    		emissiveColor .5 .5 .5
+    		ambientIntensity 0
+    		specularColor .502 .502 .502
+			shininess .008
+		}
+
+		ImageTexture{url "jianzhang_01.jpg"}
+
+		DEF caption_bone_instance BoneInstance {
+			classname "woman01"	
+			meshSet	"default"
+			animCycle [
+				"standby.caf" "0.1" "0.1"
+			]
+			backCulling	FALSE
+			refreshTime	0.001
+			refreshCache TRUE
+			boneNames ["chest_b"]
+			boneTransforms [USE head]
+		}
+
+	]
+}
+Script	{
+	field SFNode bone USE caption_bone_instance
+	url	"javascript:
+	var e = new MFString('eye.caf', '0.1', '0.1'),
+		t = new MFString('talk.caf', '0.1', '0.1'),
+		h = [new MFString('left_head.caf', '0.1', '1'),new MFString('right_head.caf', '0.1', '1')];
+	function initialize(){
+		eye();
+		talk();
+		//		head();
+	}
+
+	function eye(){
+		bone.animation = e;
+		setTimeout('eye()',getRandomNum(1,2));
+	}
+
+	function talk(){
+		bone.animation = t;
+		setTimeout('talk()',getRandomNum(8,10));
+	}
+	function head(){
+		bone.animation = h[Math.round(Math.random())];
+		setTimeout('head()',3);
+	}
+	function getRandomNum(num1,num2){
+		return Math.floor(Math.random()*(num2-num1+1)+num1);
+	}
+	"
+}

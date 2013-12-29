@@ -1,0 +1,159 @@
+#VRML V2.0 utf8
+
+
+#DEF	font18 Font	{
+#	name "Gang of Four"
+#	size 18
+#}
+
+#DEF	font30 Font	{
+#	name "Gang of Four"
+#	size 30
+#}
+
+#DEF	font40 Font	{
+#	name "Gang of Four"
+#	size 40
+#}
+
+#GUIGroup {
+#	imagesets [ "../../resources/ui/FRUIT/UI.imageset" "../../resources/ui/UI/UI.imageset"]
+#	lookfeels ["../../resources/ui/UI/UI.looknfeel"]
+#	schemes ["../../resources/ui/UI/UI.scheme"]
+#	children [
+		GUIWindow {
+			type "UI/BlankWindow"			
+			size 0.1333 0.237
+			children [
+				GUIWindow {
+					type "UI/BlankWindow"
+					size 1 1
+					properties [
+						"BoxBackground" "set:UI image:mask"
+					]	
+					zorder 20
+				}
+				DEF	targetBullet GUIWindow {
+					type "UI/BlankWindow"
+					size 0.7 0.7
+					alpha 1
+					properties [
+						"BoxBackground" "set:FRUIT image:pingguo"
+					]
+					zorder	10			
+					horizontalAlignment	CENTER
+					verticalAlignment  CENTER
+					
+				}
+				GUIWindow {
+					type "UI/BlankWindow"
+					size 1 1
+					properties [
+						"BoxBackground" "set:UI image:mask_bg"
+						"BgColour" "990066CC"
+					]						  
+				}
+
+
+				DEF	bullets GUIWindow {
+					type "UI/BlankWindow"
+					size 1.5 0.3
+					position -1.5 0.65
+					clippedByParent	FALSE
+#					properties [
+#						"BoxBackground" "set:UI image:color_ffffff"
+#					]
+					children [
+						GUIWindow {
+							type "UI/BlankWindow"
+							position -0.4 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:FRUIT image:pingguo"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position -0.2 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:FRUIT image:pingguo"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:FRUIT image:pingguo"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0.2 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:FRUIT image:pingguo"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+						GUIWindow {
+							type "UI/BlankWindow"
+							position 0.4 0
+							size 0.2 1
+							properties [
+								"BoxBackground" "set:FRUIT image:pingguo"
+							]						  
+							horizontalAlignment	CENTER
+							verticalAlignment  CENTER
+						}
+					]
+				}
+
+			]
+			verticalAlignment BOTTOM
+			horizontalAlignment	RIGHT
+		}
+
+		DEF	globalTime GUIWindow {
+			type "UI/BlankWindow"
+			size 0.2 0.08
+			zorder 20			   
+			text "02:00"
+			properties [							   
+				"TextFont" "font40"
+				"TextColour" "FFFF9900"
+			]
+			horizontalAlignment	CENTER
+			verticalAlignment TOP
+		}
+
+		DEF	scores GUIWindow {
+			type "UI/BlankWindow"
+			size 0.2 0.08
+			zorder 20			   
+			text "SCORE:10000"
+			properties [							   
+				"TextFont" "font30"
+				"TextColour" "FFFF9900"
+				"HorzLabelFormatting" "LeftAligned"
+				"Padding_left" "10"
+			]
+			horizontalAlignment	LEFT
+			verticalAlignment TOP
+		}
+#	]
+#}
+
+#Rotor {
+#	children [
+#		Box{}
+#	]
+#}

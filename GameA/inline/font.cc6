@@ -1,0 +1,30 @@
+#VRML V2.0 utf8
+
+DEF	font12 Font	{
+	name "Arial Black"
+	size 12
+}
+DEF	font16 Font	{
+	name "Arial Black"
+	size 16
+}
+DEF	font18 Font	{
+	name "Arial Black"
+	size 18
+}		
+DEF	font38 Font	{
+	name "Arial Black"
+	size 38
+}
+DEF	font50 Font	{
+	name "Arial Black"
+	size 50
+}
+DEF	font60 Font	{
+	name "Arial Black"
+	size 60
+}
+DEF	font120 Font	{
+	name "Arial Black"
+	size 120
+}
